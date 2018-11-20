@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+
+var app = angular.module("myApp" , []);
+
+app.controller("myController", function($scope){
+
+
+
+  var employees = [
+
+                {
+
+                    name: "Ben", dateOfBirth: new Date("November 23, 1980"),
+
+                    gender: "Male", salary: 55000
+
+                },
+
+                {
+
+                    name: "Sara", dateOfBirth: new Date("May 05, 1970"),
+
+                    gender: "Female", salary: 68000
+
+                },
+
+                {
+
+                    name: "Mark", dateOfBirth: new Date("August 15, 1974"),
+
+                    gender: "Male", salary: 57000
+
+                },
+
+                {
+
+                    name: "Pam", dateOfBirth: new Date("October 27, 1979"),
+
+                    gender: "Female", salary: 53000
+
+                },
+
+                {
+
+                    name: "Todd", dateOfBirth: new Date("December 30, 1983"),
+
+                    gender: "Male", salary: 60000
+
+                }
+
+            ];
+
+
+
+            $scope.employees = employees;
+
+            $scope.sortElement = "";
+
+            $scope.sort = function(value)
+
+            {
+
+           $scope.sortValue=value;
+
+           alert("HEllo");
+
+           }
+
+
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+
+
+<div ng-app="myApp" ng-controller="myController">
+
+Search table data by : 
+
+<input type="text" ng-model="searchText" placeholder="search employeee"/>
+
+<br/><br/>
+
+{{ sortElement }}
+
+<br/><br/>
+
+<table border="2">
+
+
+
+<thead>
+
+<tr>
+
+
+<th>Name</th>
+
+<th>DOB</th>
+
+<th>Gender</th>
+
+<th>Salary</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+<tr ng-repeat="x in employees | filter:searchText">
+
+
+
+<td>{{ x.name }} </td>
+
+<td> {{ x.dateOfBirth | date }}</td>
+
+<td>{{ x.gender }}</td>
+
+<td>{{ x.salary |number }}</td>
+
+</tr>
+
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+</body>
+
+</html>
