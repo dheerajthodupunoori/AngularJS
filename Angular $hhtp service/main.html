@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+
+
+var app = angular
+        .module("myModule", [])
+        .controller("myController", function ($scope , $http) {
+	$http({
+		
+		method : 'GET',
+		url : 'demo.html'
+	      }).then(function success(response) {
+			alert("hello success");
+		$scope.Data = response.data;
+			},function error(reason) {
+                $scope.Data = reason.data;
+                   });
+        });
+</script>
+</head>
+<body>
+
+<div ng-app="myModule" ng-controller="myController">
+<h1> {{ Data }} </h1>
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+</html>
