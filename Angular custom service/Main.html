@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="C:\Users\Dheeraj_Thodupunuri\Desktop\Angular custom service\Script.js"></script>
+    <script src="C:\Users\Dheeraj_Thodupunuri\Desktop\Angular custom service\StringService.js"></script>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td>Your String</td>
+                <td><input type="text" ng-model="input" /> </td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="text" ng-model="output" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" ng-click="transformString(input)"
+                           value="Process String" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
