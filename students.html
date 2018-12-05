@@ -1,0 +1,15 @@
+﻿<div class="container-fluid">
+    <div class="jumbotron">
+        <h1> {{ studentMessage}} </h1>
+        <ul>
+
+            <li ng-repeat="x in students|filter:searchTxt">
+                <a href="#/studentDetails/{{ x.Id }}">
+                    {{ x.name }}
+                </a>
+            </li>
+
+        </ul>
+        <button type="button" class="btn btn-primary" ng-click="reloadData()">Reload Data</button>
+    </div>
+</div>
